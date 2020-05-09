@@ -1,0 +1,11 @@
+---
+
+- name: servicenow_network_tickets
+  src: https://github.com/colin-mccarthy/servicenow_network_tickets
+  scm: git
+  version: pyats
+
+- name: parse_genie
+  src: https://github.com/clay584/parse_genie
+  scm: git
+  version: master
