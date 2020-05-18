@@ -1,0 +1,22 @@
+---
+- name: Apache server
+  hosts: web
+  become: yes
+
+  vars:
+    file_path: /var/www/html/index.html
+
+  tasks:
+  - name: Install Apache with yum
+    yum:
+      name: httpd
+      state: present
+  - name: Apache enabled and running
+    service:
+      name: httpd
+      enabled: true
+      state: started
+  - name: copy index.html
+    template:
+      src: index.j2
+      dest: "{{ file_path }}"
